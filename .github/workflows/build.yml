@@ -1,1 +1,14 @@
 name: Build APK
+on:
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: 17 }
+      - uses: gradle/actions/setup-gradle@v4
+        with: { gradle-version: 8.7 }
+      - name: Crear proyecto
+        run: |
+          echo 'UEsDBAoAAAAAAGEzel0AAAAAAAAAAAAAAAASABwAREVEU2FmaW80TGF1bmNoZXIvVVQJAAM20QdrNtEHa3V4CwABBAAAAAAEAAAAAFBLAwQUAAAACAD0Mnpd06N/TWgAAACOAAAAIgAcAERFRFNhZmlvNExhdW5jaGVyL2J1aWxkLmdyYWRsZS5rdHNVVAkAA2zQB2uJ0AdrdXgLAAEEAAAAAAQAAAAAK8gpTc/MK1ao5lIAgswUDaXk/Fy9xLyUovzMFL3EgoKczOTEksz8PCVNhbLUomIgS0HJQs9Uz0hJASRbqZCWmFOcCtedX5Sul5VaklSUCDRVLzu/JCczD2YcshGGepZ6RiaoZtRyAQBQSwMEFAAAAAgA9DJ6XcJizrGNAAAA2QAAACUAHABERURTYWZpbzRMYXVuY2hlci9zZXR0aW5ncy5ncmFkbGUua3RzVVQJAANs0AdridAHa3V4CwABBAAAAAAEAAAAAJ2NMQ7CMBAE+7zCcpU0VFQgKqADKYIXnOzFGDl31sVGQih/J8kTKGe0ms2phshXYgoYw
